@@ -11,7 +11,7 @@ const WorkoutForm = () => {
         const workout = {title, load, reps}
         const response = await fetch('/api/workouts', {
             method: 'POST',
-            body: JSON.stringly(workout),
+            body: JSON.stringify(workout),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -39,7 +39,7 @@ const WorkoutForm = () => {
             onChange={(e) => setTitle(e.target.value)} 
             value = {title}/>
 
-            <label>Load (in kg):</label>
+            <label>Load (in lbs):</label>
             <input type="number" 
             onChange={(e) => setLoad(e.target.value)} 
             value = {load}/>
