@@ -2,9 +2,11 @@ import express from "express";
 import 'dotenv/config'
 import workoutRoutes from './routes/workouts.js'
 import mongoose from "mongoose"
+// import cors from "cors"
 
-// create app
-const app = express();
+// // create app
+ const app = express();
+// app.use(cors({origin: "http://localhost:3000"}))
 
 //middleware
 app.use(express.json())
@@ -16,12 +18,6 @@ app.use((req,res,next) => {
 
 // Routes
 app.use('/api/workouts', workoutRoutes)
-
-
-
-
-
-  
 
 //Connect to mongo DB
 mongoose.connect(process.env.MONGO_URI)

@@ -6,9 +6,8 @@ import mongoose from "mongoose"
 //Get all workout
 export const getWorkouts = async (req, res) => {
     const workout = await Workout.find({}).sort({createdAt: -1})
-    res.status(400).json(workout)
+    res.status(200).json(workout)
 }
-
 
 //Get a workout
 export const getWorkout = async (req, res) => {
@@ -26,7 +25,6 @@ export const getWorkout = async (req, res) => {
         res.status(400).json(workout)
     }
 }
-
 
 //Post a workout
 export const createWorkout = async (req, res) => {
